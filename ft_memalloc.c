@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 18:18:51 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 20:57:03 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:04:38 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void *mem;
 

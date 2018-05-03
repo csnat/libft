@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:44:47 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 18:09:16 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:07:04 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*tmp;
 

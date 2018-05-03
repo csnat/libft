@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:40:01 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:19:11 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 18:56:19 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char *str;
 

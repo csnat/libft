@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 16:46:58 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:02:34 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:20:33 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
 	unsigned int	i;
 

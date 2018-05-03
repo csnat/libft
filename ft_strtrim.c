@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:02:07 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:16:16 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:38:31 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -38,5 +38,4 @@ char *ft_strtrim(char const *s)
 	}
 	str[k] = '\0';
 	return (str);
-
 }

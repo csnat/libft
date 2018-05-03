@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:18:44 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:36:28 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char	**ret;
 	size_t	i;

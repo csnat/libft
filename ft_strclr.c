@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 18:05:05 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:00:52 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:15:33 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
 	int i;
 

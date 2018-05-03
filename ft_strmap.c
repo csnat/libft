@@ -6,16 +6,16 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 16:49:13 by ncosta            #+#    #+#             */
-/*   Updated: 2018/04/30 21:05:45 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/02 19:29:42 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned int i;
-	char *str;
+	unsigned int	i;
+	char			*str;
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
