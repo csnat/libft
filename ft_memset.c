@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:42:54 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/02 19:08:27 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/03 18:34:45 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_memset(void *ptr, int x, size_t n)
 	a = (char *)ptr;
 	while (n > 0)
 	{
-		a[n - 1] = x;
+		*a = x;
+		a++;
 		n--;
 	}
 	return (ptr);

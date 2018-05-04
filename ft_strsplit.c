@@ -6,37 +6,74 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/03 15:14:25 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/03 18:51:18 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
-{
-	char	**ret;
-	size_t	i;
-	size_t	j;
-	size_t	len;
 
-	if (!s || !c)
-		return (0);
-	ret = ft_memalloc(ft_strlen(s) + 1);
-	i = 0;
-	j = 0;
-	while (s[i])
+static int		is_del(char c, char ch)
+{
+	if (c == ch)
+		return (1);
+	return (0);
+}
+
+static int		find_nb_w(char *str, char ch)
+{
+	int result;
+
+	result = 0;
+	while (*str)
 	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			len = 0;
-			while (s[i + len] && (s[i + len] != c))
-				len++;
-			ret[j++] = ft_strsub(s, i, len);
-			i = i + len;
-		}
+		while (is_del(*str, ch))
+			str++;
+		if (*str)
+			result++;
+		while (!is_del(*str, ch) && *str)
+			str++;
 	}
-	ret[j] = 0;
-	return (ret);
+	return (result);
+}
+
+static char		**split_func(char *str, int nb_words, int *i, char ch)
+{
+	int		i3;
+	int		word_size;
+	char	**result;
+
+	if (!(result = malloc(sizeof(char*) * (nb_words + 1))))
+		return (NULL);
+	while (i[0] < nb_words)
+	{
+		while (is_del(str[i[1]], ch))
+			i[1]++;
+		word_size = 0;
+		while (!is_del(str[i[1] + word_size], ch) && str[i[1] + word_size])
+			word_size++;
+		if (!(result[i[0]] = malloc(sizeof(char) * (word_size + 1))))
+			return (NULL);
+		i3 = -1;
+		while (++i3 < word_size)
+			result[i[0]][i3] = str[i[1] + i3];
+		result[i[0]][i3] = '\0';
+		i[1] += word_size;
+		i[0]++;
+	}
+	result[i[0]] = 0;
+	return (result);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	int i[2];
+
+	if (s && c)
+	{
+		i[0] = 0;
+		i[1] = 0;
+		return (split_func((char*)s, find_nb_w((char*)s, c), i, c));
+	}
+	return (NULL);
 }
