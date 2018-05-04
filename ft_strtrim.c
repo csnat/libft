@@ -6,36 +6,39 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:02:07 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/02 19:38:31 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/03 20:08:33 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int			is_special_whitespace(const char c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
-	char			*str;
+	if (c != '\0' && (c == ' ' || c == '\n' || c == '\t'))
+		return (1);
+	return (0);
+}
 
-	i = 0;
-	k = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	if (s[i] == '\0')
-		return (ft_strcpy(ft_memalloc(sizeof(char) * 2), ""));
-	j = ft_strlen(s) - 1;
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j--;
-	str = (char *)malloc(sizeof(char) * (j - i + 2));
-	if (str == NULL)
-		return (NULL);
-	while (k < j - i + 1)
+char				*ft_strtrim(char const *s)
+{
+	size_t				len;
+	size_t				begin;
+	int					end;
+
+	if (!s)
+		return (0);
+	len = ft_strlen(s);
+	end = len - 1;
+	begin = -1;
+	while (is_special_whitespace(s[++begin]) && begin < len)
+		;
+	while (is_special_whitespace(s[end--]) && end > -1)
+		;
+	if (end == -1 || begin >= len)
+		return (ft_strnew(1));
+	else
 	{
-		str[k] = s[i + k];
-		k++;
+		len = ++end - begin + 1;
+		return (ft_strsub(s, begin, len));
 	}
-	str[k] = '\0';
-	return (str);
 }

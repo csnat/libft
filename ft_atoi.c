@@ -6,15 +6,15 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:50:49 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/03 18:29:08 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/03 20:09:28 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int		sign;
+	int			sign;
 	long int	i;
 	long int	result;
 

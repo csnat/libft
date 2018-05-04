@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 10:44:47 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/02 19:07:04 by ncosta           ###   ########.fr       */
+/*   Created: 2018/05/03 19:54:53 by ncosta            #+#    #+#             */
+/*   Updated: 2018/05/03 19:55:17 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*d;
 
-	tmp = (char *)malloc(sizeof(char) * len);
-	if (tmp == NULL)
-		return (NULL);
-	ft_memcpy(tmp, src, len);
-	ft_memcpy(dst, tmp, len);
-	free(tmp);
+	d = (unsigned char*)dst;
+	s = (unsigned char*)src;
+	i = 0;
+	if (src > dst)
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	else
+		while (len > 0)
+		{
+			len--;
+			d[len] = s[len];
+		}
 	return (dst);
 }
