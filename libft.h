@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:54:15 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/03 20:51:27 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/10 13:25:37 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				*ft_memset(void *ptr, int x, size_t n);
+void				*ft_memset(void *str, int x, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
