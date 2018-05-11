@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:50:49 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 16:34:11 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 16:39:12 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_atoi(const char *str)
 {
 	int			sign;
-	int	i;
-	int	result;
+	long int	i;
+	long int	result;
 
 	sign = 1;
 	i = 0;
