@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 16:49:13 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/03 19:43:37 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/10 22:30:34 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 char				*ft_strmap(char const *s, char (*f)(char))
 {
 	size_t			i;
-	size_t			siz;
-	char			*newstr;
+	size_t			size;
+	char			*str;
 
 	if (!s || !f)
 		return (0);
-	siz = ft_strlen(s);
-	newstr = ft_strnew(siz);
-	if (!newstr)
+	size = ft_strlen(s);
+	str = ft_strnew(size);
+	if (!str)
 		return (0);
 	i = -1;
-	while (++i < siz)
-		newstr[i] = f(s[i]);
-	return (newstr);
+	while (++i < size)
+		str[i] = f(s[i]);
+	return (str);
 }
