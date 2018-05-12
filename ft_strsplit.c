@@ -6,36 +6,36 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 18:51:36 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 18:58:04 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_word_count(const char *s, char c)
+static int	ft_wordcount(const char *s, char c)
 {
-	int flag;
-	int word;
+	int i;
+	int n;
 
-	flag = 0;
-	word = 0;
+	i = 0;
+	n = 0;
 	if (!s || !c)
 		return (0);
 	while (*s)
 	{
-		if (*s == c && flag == 1)
-			flag = 0;
-		if (*s != c && flag == 0)
+		if (*s == c && i == 1)
+			i = 0;
+		if (*s != c && i == 0)
 		{
-			flag = 1;
-			word++;
+			i = 1;
+			n++;
 		}
 		s++;
 	}
-	return (word);
+	return (n);
 }
 
-static int	ft_wlen(const char *s, char c)
+static int	ft_wordlen(const char *s, char c)
 {
 	int len;
 
@@ -51,20 +51,20 @@ static int	ft_wlen(const char *s, char c)
 char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
-	int		nb_words;
+	int		words;
 	char	**array;
 
 	i = 0;
-	nb_words = ft_word_count((const char *)s, c);
-	array = (char **)malloc(sizeof(*array) * (nb_words + 1));
+	words = ft_wordcount((const char *)s, c);
+	array = (char **)malloc(sizeof(*array) * (words + 1));
 	if (array == NULL)
 		return (NULL);
-	while (nb_words--)
+	while (words--)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		array[i] = ft_strsub((const char *)s, 0, ft_wlen((const char *)s, c));
-		s = s + ft_wlen((const char*)s, c);
+		array[i] = ft_strsub((const char *)s, 0, ft_wordlen((const char *)s, c));
+		s = s + ft_wordlen((const char*)s, c);
 		i++;
 	}
 	array[i] = NULL;
