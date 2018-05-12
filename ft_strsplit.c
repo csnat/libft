@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 17:35:58 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 17:39:00 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char				**ft_strsplit(char const *s, char c)
 		return (NULL);
 	i = 0;
 	word = ft_counter(str, c);
-	if(!(array = (char**)ft_memalloc(sizeof(char*) * (word + 1)))
+	if (!(array = (char**)ft_memalloc(sizeof(char*) * (word + 1)))
 			return (NULL);
 	j = 0;
 	while (j < word)
