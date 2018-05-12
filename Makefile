@@ -6,7 +6,7 @@
 #    By: ncosta <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/23 16:17:55 by ncosta            #+#    #+#              #
-#    Updated: 2018/05/03 13:30:29 by ncosta           ###   ########.fr        #
+#    Updated: 2018/05/11 18:41:35 by ncosta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ SRCS =	ft_putchar.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_countwords.c
 
 OBJS =	$(SRCS:.c=.o)
 

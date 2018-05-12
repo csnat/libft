@@ -6,72 +6,67 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 17:47:45 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 18:51:36 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		ft_stop(const char *str, int start, char a)
+static int	ft_word_count(const char *s, char c)
 {
-	size_t		i;
-	
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[start] && (str[start] != a))
-	{
-		start++;
-		i++;
-	}
-	return (i);
-}
+	int flag;
+	int word;
 
-static int			ft_counter(char *str, char c)
-{
-	int		word;
-	int		i;
-
+	flag = 0;
 	word = 0;
-	i = 0;
-	while (str[i])
+	if (!s || !c)
+		return (0);
+	while (*s)
 	{
-		while (str[i] && str[i] != c)
-			i++;
-		while (str[i] && str[i] == c)
-			i++;
-		word++;
+		if (*s == c && flag == 1)
+			flag = 0;
+		if (*s != c && flag == 0)
+		{
+			flag = 1;
+			word++;
+		}
+		s++;
 	}
 	return (word);
 }
 
-char				**ft_strsplit(char const *s, char c)
+static int	ft_wlen(const char *s, char c)
 {
-	int				word;
-	int				j;
-	unsigned int	i;
-	char			**array;
-	char			*str;
+	int len;
 
-	str = (char *)s;
-	if (!str || *str == 0)
-		return (NULL);
-	i = 0;
-	word = ft_counter(str, c);
-	if (!(array = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
-			return (NULL);
-	if (ft_counter(s, c) == 0)
-		return (tab);
-	j = 0;
-	while (j < word)
+	len = 0;
+	while (*s != c && *s != '\0')
 	{
-		while ((str[i] == (char)c) && str[i])
-			i++;
-		array[j] = ft_strsub(str, i, ft_stop(str, i, c));
-		while ((str[i] != (char)c) && str[i])
-			i++;
-		j++;
+		len++;
+		s++;
 	}
-	array[j] = 0;
+	return (len);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	int		i;
+	int		nb_words;
+	char	**array;
+
+	i = 0;
+	nb_words = ft_word_count((const char *)s, c);
+	array = (char **)malloc(sizeof(*array) * (nb_words + 1));
+	if (array == NULL)
+		return (NULL);
+	while (nb_words--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		array[i] = ft_strsub((const char *)s, 0, ft_wlen((const char *)s, c));
+		s = s + ft_wlen((const char*)s, c);
+		i++;
+	}
+	array[i] = NULL;
 	return (array);
 }
