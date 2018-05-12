@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 17:40:32 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 17:47:45 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char				**ft_strsplit(char const *s, char c)
 	word = ft_counter(str, c);
 	if (!(array = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
 			return (NULL);
+	if (ft_counter(s, c) == 0)
+		return (tab);
 	j = 0;
 	while (j < word)
 	{
