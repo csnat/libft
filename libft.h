@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 10:54:15 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 19:10:34 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 20:22:26 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_countwords(char *str, char x);
 int					ft_is_whitespace(int c);
+char				*ft_strndup(const char *s1, size_t n);
+void				ft_swap(int *a, int *b);
+int					ft_power(int nb, int power);
 
 #endif
