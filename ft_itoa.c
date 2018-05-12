@@ -6,13 +6,13 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:40:01 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/03 20:16:33 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 16:49:52 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_str_len(int n)
+static size_t	str_size(int n)
 {
 	size_t		i;
 
@@ -25,21 +25,21 @@ static size_t	get_str_len(int n)
 char			*ft_itoa(int n)
 {
 	char			*str;
-	size_t			str_len;
-	unsigned int	n_cpy;
+	size_t			size;
+	unsigned int	a;
 
-	str_len = get_str_len(n);
-	n_cpy = n;
+	size = str_size(n);
+	a = n;
 	if (n < 0)
 	{
-		n_cpy = -n;
-		str_len++;
+		a = -n;
+		size++;
 	}
-	if (!(str = ft_strnew(str_len)))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
-	str[--str_len] = n_cpy % 10 + '0';
-	while (n_cpy /= 10)
-		str[--str_len] = n_cpy % 10 + '0';
+	str[--size] = a % 10 + '0';
+	while (a /= 10)
+		str[--size] = a % 10 + '0';
 	if (n < 0)
 		*(str + 0) = '-';
 	return (str);
