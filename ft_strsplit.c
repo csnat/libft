@@ -6,7 +6,7 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:05:44 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 18:58:04 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 20:32:35 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ char		**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		array[i] = ft_strsub((const char *)s, 0, ft_wordlen((const char *)s, c));
+		array[i] = ft_strsub((const char *)s, 0,
+				ft_wordlen((const char *)s, c));
 		s = s + ft_wordlen((const char*)s, c);
 		i++;
 	}

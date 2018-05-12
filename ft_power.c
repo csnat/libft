@@ -6,25 +6,25 @@
 /*   By: ncosta <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:47:22 by ncosta            #+#    #+#             */
-/*   Updated: 2018/05/11 19:48:19 by ncosta           ###   ########.fr       */
+/*   Updated: 2018/05/11 20:42:34 by ncosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_power(int nb, int power)
+int	ft_power(int nb, int power)
 {
-    int    i;
+	int i;
 
-    i = 0;
-    if (power < 0)
-    {
-        return (0);
-    }
-    while (power > 0)
-    {
-        i = i * nb;
-        power--;
-    }
-    return (nb);
+	i = 0;
+	if (power < 0)
+	{
+		return (0);
+	}
+	while (power > 0)
+	{
+		i = i * nb;
+		power--;
+	}
+	return (nb);
 }
